@@ -229,15 +229,19 @@ export default function FileComparison() {
           </button>
         </div>
 
-        <div className="mt-10 rounded-lg">
+        <div className="mt-10 rounded-lg overflow-x-auto">
           {comparisonResult ? (
-            <table className="w-full table-auto bg-white shadow-lg rounded-lg">
+            <table className="min-w-full w-full table-auto bg-white shadow-lg rounded-lg">
               <thead className="rounded-lg">
                 <tr className="bg-gradient-to-r from-red-800 to-red-300 text-white">
-                  <th className="py-3 px-4 text-left">Key</th>
-                  <th className="py-3 px-4 text-left">Sol Dosya</th>
-                  <th className="py-3 px-4 text-left">Sağ Dosya</th>
-                  <th className="py-3 px-4 text-left">Durum</th>
+                  <th className="py-2 px-2 sm:py-3 sm:px-4 text-left">Key</th>
+                  <th className="py-2 px-2 sm:py-3 sm:px-4 text-left">
+                    Sol Dosya
+                  </th>
+                  <th className="py-2 px-2 sm:py-3 sm:px-4 text-left">
+                    Sağ Dosya
+                  </th>
+                  <th className="py-2 px-2 sm:py-3 sm:px-4 text-left">Durum</th>
                 </tr>
               </thead>
               <tbody>
@@ -250,18 +254,20 @@ export default function FileComparison() {
                         : "bg-red-100 hover:bg-red-200"
                     }`}
                   >
-                    <td className="py-3 px-4 text-gray-800">{result.key}</td>
-                    <td className="py-3 px-4 text-gray-800">
+                    <td className="py-2 px-2 sm:py-3 sm:px-4 text-gray-800 text-sm">
+                      {result.key}
+                    </td>
+                    <td className="py-2 px-2 sm:py-3 sm:px-4 text-gray-800 text-sm">
                       {result.leftValue}
                     </td>
-                    <td className="py-3 px-4 text-gray-800">
+                    <td className="py-2 px-2 sm:py-3 sm:px-4 text-gray-800 text-sm">
                       {result.rightValue}
                     </td>
-                    <td className="py-3 px-4 text-gray-800 flex items-center">
+                    <td className="py-2 px-2 sm:py-3 sm:px-4 text-gray-800 text-sm flex items-center">
                       {result.isEqual ? (
-                        <span className="flex items-center gap-2">
+                        <span className="flex items-center gap-1 sm:gap-2">
                           <svg
-                            className="w-5 h-5 text-green-500"
+                            className="w-4 h-4 sm:w-5 sm:h-5 text-green-500"
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
@@ -277,9 +283,9 @@ export default function FileComparison() {
                           Eşleşti
                         </span>
                       ) : (
-                        <span className="flex items-center gap-2">
+                        <span className="flex items-center gap-1 sm:gap-2">
                           <svg
-                            className="w-5 h-5 text-red-500"
+                            className="w-4 h-4 sm:w-5 sm:h-5 text-red-500"
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
