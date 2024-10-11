@@ -12,6 +12,9 @@ export default function FileComparison() {
   const [comparisonResult, setComparisonResult] = useState(null);
 
   const normalizeString = (str) => {
+    if (typeof str !== "string") {
+      return ""; // Eğer veri string değilse boş string döndür
+    }
     return str
       .toLowerCase()
       .replace(/ç/g, "c")
